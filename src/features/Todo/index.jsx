@@ -10,15 +10,18 @@ function ToDoFeature(props) {
   const todoList = [
     {
       id: 1,
-      title: 'Eat'
+      title: 'Eat',
+      status: 'active'
     },
     {
       id: 2,
-      title: 'Sleep'
+      title: 'Sleep',
+      status: 'active'
     },
     {
       id: 3,
-      title: 'Code'
+      title: 'Code',
+      status: 'not active'
     }
   ]
   return (
