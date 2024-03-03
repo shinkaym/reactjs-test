@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import ToDoFeature from './features/Todo';
+import TodoFeature from './features/Todo';
 
 function App() {
   return (
     <div className="App">
-      <ToDoFeature/>
+      <TodoFeature/>
     </div>
   );
 }
