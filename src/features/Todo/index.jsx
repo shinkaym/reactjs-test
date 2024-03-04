@@ -21,25 +21,46 @@ function ToDoFeature(props) {
     {
       id: 3,
       title: 'Code',
-      status: 'not active'
+      status: 'inactive'
     }
   ]
 
   const [todoList, setTodoList] = useState(initTodoList)
+  const [filteredStatus, setfilteredStatus] = useState('all')
 
   const handleTodoClick = (todo, idx) => {
     const newTodoList = [...todoList]
     newTodoList[idx] = {
       ...newTodoList[idx],
-      status: newTodoList[idx].status === 'active' ? 'not active' : 'active'
+      status: newTodoList[idx].status === 'active' ? 'inactive' : 'active'
     }
     setTodoList(newTodoList)
   }
+
+  const handleShowAllClick = () => {
+    setfilteredStatus('all')
+  }
+
+  const handleShowActiveClick = () => {
+    setfilteredStatus('active')
+  }
+
+  const handleShowInactiveClick = () => {
+    setfilteredStatus('inactive')
+  }
+
+  const renderedTodoList = todoList.filter(todo => filteredStatus === 'all' || filteredStatus === todo.status)
   
   return (
     <div>
       <h3>TodoList</h3>
-      <TodoList todoList={todoList} onTodoClick={handleTodoClick}/>
+      <TodoList todoList={renderedTodoList} onTodoClick={handleTodoClick}/>
+
+      <div>
+        <button onClick={handleShowAllClick}>Show all</button>
+        <button onClick={handleShowActiveClick}>Show Active</button>
+        <button onClick={handleShowInactiveClick}>Show Inactive</button>
+      </div>
     </div>
   );
 }
