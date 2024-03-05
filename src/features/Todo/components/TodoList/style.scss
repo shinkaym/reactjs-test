@@ -1,12 +1,12 @@
 .todo-list {
-  & > li {
-    color: #ccc;
-    font-style: italic;
-    text-decoration: line-through;
-  }
+    & > li {
+        color: #ccc;
+        font-style: italic;
+        text-decoration: line-through;
+    }
 
-  & > li.active {
-    color: green;
-    text-decoration: none;
-  }
+    & > li.active {
+        color: green;
+        text-decoration: none;
+    }
 }

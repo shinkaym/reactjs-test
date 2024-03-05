@@ -10,7 +10,7 @@ function TodoFeature(props) {
         <div>
             <Routes>
                 <Route path="/" element={<ListPage />} />
-                <Route path="/detail" element={<DetailPage />} />
+                <Route path="/" element={<DetailPage />} />
             </Routes>
         </div>
     );
